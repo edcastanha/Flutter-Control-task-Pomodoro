@@ -7,15 +7,18 @@ class ContadorUtils = _ContadorUtils with _$ContadorUtils;
 abstract class _ContadorUtils with Store {
   @observable
   int contador = 0;
+ 
 
   @action
-  void incrementar(){
+  void incrementar() {
     contador++;
   }
 
   @action
-  void decrementar(){
-    contador--;
+  void decrementar() {
+    if(contador > 0){
+      contador--;
+    }
+    
   }
-
 }
